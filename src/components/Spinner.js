@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Filter = () => {
+const Spinner = () => {
   return (
     <div>
       
@@ -8,5 +8,4 @@ const Filter = () => {
   )
 }
 
-export default Filter
-
+export default Spinner

@@ -6,29 +6,12 @@ import Filter from "./components/Filter";
 import Cards from "./components/Cards";
 
 const App = () => {
-  const [courses,setCourses]=useState(null);
-  useEffect(()=>{
-    const fetchData=async()=>{
-      try{
-        const res=await fetch(apiUrl);
-        const output=await res.json();
-        setCourses(output.data);
-
-      }
-      catch(error){
-        // eslint-disable-next-line no-undef
-        toast.error("something went wrong");
-
-      }
-    }
-    fetchData();
-
-  },[]);
+  
   // eslint-disable-next-line react/jsx-no-undef
-  return (<div><Navbar/>
- 
-  <Filter filterData={filterData}/>
-  <Cards courses={courses}/>
+  return (<div>
+    <div><Navbar/></div>
+    <div><Filter/></div>
+    <div><Cards/></div>
   </div>);
 };
 
