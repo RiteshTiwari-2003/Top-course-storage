@@ -7,10 +7,13 @@ import Cards from "./components/Cards";
 import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {toast} from "react-toastify";
+import Spinner from "./components/Spinner";
 
 const App = () => {
   const [course,setCourses]=useState(null);
+  const [loading,setLoading]=useState(true);
   async function fetchData(){
+    setLoading(true);
     try{
       let response=await fetch(apiUrl);
       let output=response.json();
@@ -22,14 +25,18 @@ const App = () => {
       toast.error("Network me koi dikkat hai");
 
     }
+    setLoading(false);
   }
+  useEffect(()=>{
+    fetchData();
+  },[]);
   
   
   // eslint-disable-next-line react/jsx-no-undef
   return (<div>
     <div><Navbar/></div>
     <div><Filter filterData={filterData}/></div>
-    <div><Cards/></div>
+    <div>{loading?(<Spinner/>):(<Cards/>)}</div>
   </div>);
 };
 
