@@ -15,7 +15,7 @@ const Cards = (props) => {
   return (
     <div>
       {
-        getCourses().map((course)=>(<Card key={course.id}/>))
+        getCourses().map((course)=>(<Card key={course.id} course={course}/>))
       }
       
     </div>
