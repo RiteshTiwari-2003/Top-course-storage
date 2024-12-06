@@ -33,7 +33,7 @@ const App = () => {
   
   
   // eslint-disable-next-line react/jsx-no-undef
-  return (<div>
+  return (<div className="min-h-screen flex flex-col">
     <div><Navbar/></div>
     <div><Filter filterData={filterData}/></div>
     <div>{loading?(<Spinner/>):(<Cards courses={courses}/>)}</div>
