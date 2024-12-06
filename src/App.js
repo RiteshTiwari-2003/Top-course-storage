@@ -10,7 +10,7 @@ import {toast} from "react-toastify";
 import Spinner from "./components/Spinner";
 
 const App = () => {
-  const [course,setCourses]=useState(null);
+  const [courses,setCourses]=useState(null);
   const [loading,setLoading]=useState(true);
   async function fetchData(){
     setLoading(true);
@@ -36,7 +36,7 @@ const App = () => {
   return (<div>
     <div><Navbar/></div>
     <div><Filter filterData={filterData}/></div>
-    <div>{loading?(<Spinner/>):(<Cards/>)}</div>
+    <div>{loading?(<Spinner/>):(<Cards courses={courses}/>)}</div>
   </div>);
 };
 
