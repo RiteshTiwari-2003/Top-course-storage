@@ -19,6 +19,7 @@ const Card = (props) => {
       else{
         setLikedCourses((prev)=>[...prev,course.id]);
       }
+      toast.success("liked the course successfully");
     }
 
   }
